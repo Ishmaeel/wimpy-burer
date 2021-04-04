@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<!-- From: st_dialogs_jupiter.xml -->
+	<string id="jup_b220_trapper_about_mutants_11111">
+		<text>Burers rely on telekinesis in combat. Get too close - it'll push you away. Keep your distance - it'll throw something heavy at you. Strategy for it is as follows: try to hit it from medium range - and most importantly never stand in one place. But try to conserve your energy, spend it carefully. And hold your gun tighter when aiming and shooting: burer might try to snatch it from your hands with telekinesis, when it gets angry. It does so pretty well, especially when the hunter gets a little tired. But when it comes to that, don't try to chase your gun and catch it mid-air - it'll punch your lights out. Better hide and wait, till your gun is flies back to you.</text>
+	</string>
+<!-- From: st_dialogs_zaton.xml -->
+	<string id="zat_b33_stalker_snag_share_package_dialog_111">
+		<text>Let's see what we got here.... My old Fort-17... Better than the 12 model, maintenance and more comfortable. A long time ago my uncle modified it with his own hands. Almost like a family heirloom, yeah... so, let me hold on to that.</text>
+	</string>
+	<string id="zat_b33_stalker_snag_share_package_dialog_113">
+		<text>Okay... Wow. I doubt you've ever held this kinda shooter in your hands... An upgraded AKS-74U. PBS-4 suppressor, specially developed for the Krinkov, the handguard and the stock were replaced with plastic ones - maintenance but more durable. I gave this Duty fella a ton of first aid kits to get my hands on this beauty. That was when Freedom pounded a Duty squad so bad that they actually ran out of meds. Three times this baby saved my life since then... This is definitely for me.</text>
+	</string>
+
+	<string id="zat_b3_stalker_tech_produce_62_make_battery_1">
+		<text>For you - at cost price. For 2000.</text>
+	</string>
+
+	<string id="zat_b3_stalker_tech_start_16">
+		<text>Would you look at that! They stuck an electrostatic artifact into the battery! Hah! I knew it was some kind of weird anomalous shit! The principle is a no-brainer - now I can hammer out these cells myself. Just need to throw in a couple of jumpers, so the charge controller would recognize my completely legit batteries. As you see, this is a far cry from proper manufacturing.</text>
+	</string>
+
+<!-- From: st_dialogs_pripyat.xml -->
+	<string id="pri_a22_army_signaller_start_dialog_1121">
+		<text>That's easy! But there aren't many decent spare parts around here... And disassembling something from the warehouse is obviously out of the question, since those pencil pushers would skin me and then eat me alive for this! So if have something simple like cleaning the barrel from fouling, or adjust the sights - that's a piece of cake. But if there's anything more serious, be sure to bring a couple of donor guns.</text>
+	</string>
+
+<!-- From: st_items_outfit.xml -->
+	<string id="dolg_outfit_name">
+		<text>PS5-M «Duty Defender»</text>
+	</string>
+
+	<string id="st_helm_tactic_descr">
+		<text>Western model of a tactical helmet that lacks any markings. Designed to provide a squad leader with strategic superiority over the enemy via its many scanners and satellite communications devices, which have not been installed in this particular helmet. Notable for its reinforced construction; comes with multi-layered Kevlar protection, a respirator and a first generation night vision device.</text>
+	</string>
+
+<!-- From: ui_st_loadscreen.xml -->
+	<string id="ls_tip_24">
+		<text>A blood drop symbol at the bottom of the screen warns you of untreated bleeding. The color of the symbol indicates the intensity of the bleeding.</text>
+	</string>
+	<string id="ls_tip_25">
+		<text>A radiation danger symbol at the bottom of the screen will warn you of radiation exposure. The color of the symbol indicates the intensity of exposure.</text>
+	</string>	
+	<string id="ls_tip_27">
+		<text>Some guns have backup sights in case of main scope failure. To use them press «$$ACTION_WPN_ZOOM_ALTER$$»</text>
+	</string>
+	<string id="ls_tip_29">
+		<text>RGO and RGN grenades have an impact fuse and F-1 and RGD-5 grenades detonate several seconds after the throw.</text>
+	</string>
+	<string id="ls_tip_30">
+		<text>Press «$$ACTION_QUICK_GRENADE$$» or hold «$$ACTION_WPN_4$$» for quick grenade throw. This can be useful in fierce fights.</text>
+	</string>
+	<string id="ls_tip_31">
+		<text>Without maintenance or due to negligent handling electronic components of a gun can fail.</text>
+	</string>
+	<string id="ls_tip_34">
+		<text>Controller's psy-abilities allow him to subdue his victim's will. Avoid any visual contact with him.</text>
+	</string>
+	<string id="ls_tip_37">
+		<text>АN-94 has a unique two-round burst firing mode. In this mode both bullets hit the same spot.</text>
+	</string>
+	<string id="ls_tip_38">
+		<text>There are 3 types of flashlights in the game: headlamps, tactical, and handheld. First two can be installed by a technician on your equipment and weapons accordingly. The last one is held in your left hand, thus limiting what guns you can use.</text>
+	</string>
+	<string id="ls_tip_41">
+		<text>Intense thirst leads to clouded vision and decreased stamina.</text>
+	</string>
+	<string id="ls_tip_43">
+		<text>Don't underestimate pistols. They provide considerable stopping power and can be very effective against poorly armored targets. Moreover automatic pistols allow to use a detector without seriously losing firepower.</text>
+	</string>
+	<string id="ls_tip_48">
+		<text>Melee can save your life in an emergency situation. For quick melee attack press «$$ACTION_QUICK_KICK$$»</text>
+	</string>
+	<string id="ls_tip_49">
+		<text>In the dark your headlamp attracts not only insects, but enemy bullets as well.</text>
+	</string>
+	<string id="ls_tip_65">
+		<text>Only psy-block can save you from a sudden feeling of depression and irresistable desire to end it all. Always have a bottle of the drug on hand: what if there is a controller around the corner?</text>
+	</string>
+	<string id="ls_tip_68">
+		<text>Night scopes have adjustable brightness. Press «$$ACTION_SCOPE_BRIGHTNESS_PLUS$$» and «$$ACTION_SCOPE_BRIGHTNESS_MINUS$$» while zoomed to adjust it for the given circumstances.</text>
+	</string>
+	<string id="ls_tip_72">
+		<text>Keep an eye on the condition of your equipment. The worse it is, the more parts you will need, and the more expensive the repair will be. When an item is seriously damaged it might be cheaper to buy a new one, and give the old one to the technician for disassembly to make further repairs cheaper.</text>
+	</string>
+	<string id="ls_tip_85">
+		<text>Using a flashlight in the dark might give away your position. If you have no plans for a firefight, use night vision.</text>
+	</string>
+	<string id="ls_tip_85">
+		<text>To switch on/off a function on the on-board computer of the Gauss rifle press «$$ACTION_WPN_FIREMODE_PREV$$».</text>
+	</string>
+	<string id="ls_tip_86">
+		<text>To change the PDA view press «$$ACTION_WPN_ZOOM_ALTER$$».</text>
+	</string>
+	<string id="ls_tip_92">
+		<text>Impact-detonated grenades will not go off in dangerous proximity to the person who threw it, however they can be detonated by a direct shot from a powerful firearm or a nearby explosion.</text>
+	</string>
+	<string id="ls_tip_98">
+		<text>To change the ammo type press «$$ACTION_WPN_NEXT$$», and to reload without changing the ammo - «$$ACTION_WPN_RELOAD$$». Remember - most firearms have a chamber, and after changing the ammo type in a loaded weapon, the first shot will be made with the previous type of ammunition as it stayed in the chamber. And in case of a dry reload a round will be chambered right away.</text>
+	</string>
+
+<!-- From: st_items_weapons_upgrades.xml -->
+	<string id="st_up_arm_a9_descr">
+		<text>Steel plates, securely attached on the inside.</text>
+	</string>
+	<string id="st_up_kom_a5_descr">
+		<text>The underlayer will protect the body if the outer layer of material is torn.</text>
+	</string>
+	<string id="st_up_res_a1_descr">
+		<text>Active filters can neutralize even the most corrosive chemicals. The modification also includes an additional valve for food consumption.</text>
+	</string>
+	<string id="st_up_res_b2_descr">
+		<text>A filter with a reinforced anti-corrosive coating with an additional preventing layer for protection from poisons. The modification also includes an additional valve for food consumption.</text>
+	</string>
+	<string id="st_up_resp_b1_torch_descr">
+		<text>Installation of a more advanced night vision device for operation in complete darkness. Also includes a headlamp.</text>
+	</string>
+
+<!-- From: ui_st_inventory.xml -->
+	<string id="ui_ammo_count">
+		<text>Capacity</text>
+	</string>
+</string_table>

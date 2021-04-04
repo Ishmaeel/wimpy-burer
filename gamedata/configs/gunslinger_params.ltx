@@ -1,0 +1,275 @@
+#include "gunslinger_version.ltx"
+#include "gunslinger_save_version.ltx"
+#include "gunslinger_addons.ltx"
+
+[gunslinger_base]: gunslinger_version, gunslinger_save_version, gunslinger_addons
+fov = 65
+hud_fov = 40
+
+actor_pickup_distance = 2.8
+
+;--------------------------------------------------------------Dynamic DOF:-----------------------------
+
+;стандартные параметры дофа в прицеливании (переопределяются параметрами в худовой секции)
+default_zoom_dof_near = 0.5
+default_zoom_dof_focus = 0.8
+default_zoom_dof_far = 10000
+
+;стандартные параметры дофа действий (переопределяются параметрами в худовой секции)
+default_action_dof_near = 0
+default_action_dof_focus = 0.5
+default_action_dof_far = 5
+
+;стандартные скорости изменения ДОФ
+default_dof_speed = 5 ; стандартное прицеливание, dynamic dof отключен
+default_dof_speed_in = 3; скорость входа в доф
+default_dof_speed_out = 1; скорость выхода из доф
+
+;время отключения дофа (секунд), предназначено для выхода из дофа до окончания анимы с флажком stop at end
+;данные значения могут задаваться в худовой секции раздельно для каждой такой анимы
+;положительное значение означает отсчет от времени начала анимы, отрицательное - от времени окончания, нулевое отключает досрочный выход
+default_dof_time_offset = -0.5
+
+inertion_default_pitch_offset_r = -0.017
+inertion_default_pitch_offset_n = -0.012
+inertion_default_pitch_offset_d = -0.02
+inertion_default_origin_offset = 0.09
+inertion_default_speed = 5
+
+inertion_aim_default_pitch_offset_r = 0
+inertion_aim_default_pitch_offset_n = 0
+inertion_aim_default_pitch_offset_d = 0
+inertion_aim_default_origin_offset = 0.04
+inertion_aim_default_speed = 7
+
+
+;насколько быстро камера будет переходить в присяд и обратно
+;в базовой секции стреляющего оружия можно указывать множитель actor_camera_speed_factor для изменения скорости у конкретного оружия
+;это параметр также можно менять в апгрейдах (указывается новый коэффициент, не изменение!)
+
+default_actor_camera_speed = 18
+actor_camera_speed_pow = 1.2
+
+actor_camera_landing_speed_pow_factor = 0.7
+actor_camera_landing2_speed_pow_factor = 0.7
+
+actor_camera_finish_landing_time = 0.3
+actor_camera_finish_landing_speed_factor = 0.5
+actor_camera_finish_landing_speed_pow_factor = 0.9;
+
+
+;смещение камеры вниз после приземления - максимальная амплитуда и коэффициент увеличения скорости
+;landing2 - приземление с потерей здоровья, landing - без потери
+actor_camera_landing_offset = -0.2;
+actor_camera_landing2_offset = -0.8;
+;коэффициент, на который домножается default_actor_camera_speed 
+actor_camera_landing_speed_factor = 0.5
+actor_camera_landing2_speed_factor = 0.5
+; добавка времени к стандартному времени состояния
+actor_camera_landing_time = 0.125;
+actor_camera_landing2_time = 0.125;
+
+;для удобства работы с конфигуратором можно отключать
+;ВНИМАНИЕ: Перестанет работать самоубийство!
+enable_hud_moving = true
+enable_collimaim = true
+
+; всегда выключать
+enable_move_cam_anms = true
+
+
+;насколько медленнее актор будет двигаться под воздействием контролера
+controlled_actor_speed_koef = 0.5
+
+;здоровье, при котором включится звук сердцебиения
+max_breath_health = 0.15
+max_breath_health_snddelta = 0.05
+
+;на какое время будет перехватывать управление контролёр при толчках (когда оружием нельзя самоубиться), можно смело ставить побольше
+controller_time = 5
+;время тряски рук после воздействия контролера
+controller_psyblocked_time = 10
+;время тряски рук во время шока
+actor_shock_time = 5
+controller_phantoms_min = 1
+controller_phantoms_max = 2
+controller_phantoms_min_radius = 3
+controller_phantoms_max_radius = 5
+
+;Меньше этой дистанции суицид будет начинаться независимо от видимости игрока контролером
+controller_min_feel_dist = 6
+;дальше этой дистанции начало суицида будет целиком определяться видимостью игрока для контролера
+controller_max_feel_dist = 25
+
+;Вероятность того, что если в начальной фазе взятия актора под контроль оружие вело огонь, то очередь будет остановлена
+controller_queue_stop_prob = 0.75
+
+;Вероятность пробития пси-блокады контролером
+controller_psi_unblock_mindist = 5
+controller_psi_unblock_maxdist = 19
+controller_psi_unblock_mindist_prob = 0.75
+controller_psi_unblock_maxdist_prob = 0.05
+
+;Влияние контролера на движения мыши
+controller_mouse_sense_min = 0.1
+controller_mouse_sense_max = 0.5
+controller_mouse_offset_min = -6
+controller_mouse_offset_max = 6
+controller_mouse_keyboard_move_k = 3.0
+
+;Ближе этой дистанции контролер не будет пытаться подорвать актора из подствола
+controller_shoot_gl_min_dist = 5
+
+;амплитуда дрожания рук
+base_jitter_pos_amplitude = 0.0015
+base_jitter_rot_amplitude = 0.08
+
+;максимальный вес содержимого трупа, с которым мы этот труп сможем тащить
+max_corpse_weight = 25.0
+
+;здоровье, ниже которого начинается тряска рук
+max_jitter_health = -1
+
+enable_corpse_collision = true
+
+headlamp_enable_animator = headlamp_enable_animator
+headlamp_disable_animator = headlamp_disable_animator
+
+nv_enable_animator = nv_enable_animator
+nv_disable_animator = nv_disable_animator
+
+kick_animator = quick_kick_animator
+
+pda_show_animator = pda_show_animator
+
+quickuse_functor = gwr_eatable.on_quickuse_suspected
+nv_mask_update_functor = gunsl_nv_screen_mask.update
+
+animated_addons = false
+mandatory_animated_unload_mag = false
+
+tiredness_min_condition = 0
+tiredness_increment_per_second = 0.4
+tiredness_decrement_per_second = 0.05
+
+
+tiredness_idle_base_speed = 1.0
+tiredness_idle_aim_base_speed = 1.0
+tiredness_idle_moving_base_speed = 1.0
+tiredness_idle_slow_base_speed = 1.0
+tiredness_idle_crouch_base_speed = 1.0
+tiredness_idle_crouch_slow_base_speed = 1.0
+tiredness_idle_aim_moving_base_speed = 1.0
+tiredness_idle_slow_moving_base_speed = 1.0
+tiredness_idle_crouch_moving_base_speed = 1.0
+tiredness_idle_crouch_slow_moving_base_speed = 1.0
+
+tiredness_idle_max_speed = 2.50
+tiredness_idle_aim_max_speed = 2.50
+tiredness_idle_moving_max_speed = 2.50
+tiredness_idle_slow_max_speed = 2.50
+tiredness_idle_crouch_max_speed = 2.50
+tiredness_idle_crouch_slow_max_speed = 2.50
+tiredness_idle_aim_moving_max_speed = 2.50
+tiredness_idle_slow_moving_max_speed = 2.50
+tiredness_idle_crouch_moving_max_speed = 2.50
+tiredness_idle_crouch_slow_moving_max_speed = 2.50
+
+patch_weapon_sounds = true
+
+lookout_speed = 6.0
+lookout_ampl_k = 1.5
+lookout_ampl_dx_pow = 0.6
+
+weapon_torch_treasure_dist = 45
+headlamp_treasure_dist = 45
+lefthanded_torch_treasure_dist = 20
+light_palevo_dist = 10
+light_see_dist = 60
+
+burer_superstaminahit_dist = 10
+burer_superstaminahit_value = 1000
+burer_superhealthhit_power = 0.4
+burer_superhealthhit_impulse = 14
+burer_superhealthhit_type = 5
+burer_superstaminahit_forceitemshideprob = 0.1
+
+burer_teleweapon_impulse = 1.1
+burer_teleweapon_angle = 0.26
+burer_teleweapon_min_shot_time = 10
+burer_teleweapon_max_shot_time = 300
+burer_teleweapon_shot_probability = 0.45
+burer_superstaminahit_conditiondecmin = 0.02
+burer_superstaminahit_conditiondecmax = 0.1
+
+burer_forceantiaim_dist = 10
+burer_forceshield_dist = 3
+burer_shielded_risky_factor = 0.027 ;склонность неожиданно снимать щит для контратаки 
+burer_min_gren_timer = 1500 ;если до взрыва гранаты осталось меньше времени - уходим в защиту
+burer_antigrenade_throw_force = 10;
+burer_forcetelefire_min_delta = 400;
+
+weapon_physics_damage_treshold = 9
+weapon_physics_damage_speed = 0.005
+
+upgrade_menu_points_offset_x_16x9 = 50
+upgrade_menu_points_offset_x = 0
+
+boar_hit_conditiondecmin = 0.05
+boar_hit_conditiondecmin = 0.25
+
+[gunslinger_visual_bone_mass_overrides]
+;Физическая масса для атак бюреров
+dynamics\weapons\wpn_abakan\wpn_abakan = 35
+dynamics\weapons\wpn_ak74\wpn_ak74 = 98
+dynamics\weapons\wpn_ak74u\wpn_ak74u = 70
+dynamics\weapons\wpn_beretta92fs\wpn_beretta92fs= 25
+dynamics\weapons\wpn_bizon\wpn_bizon = 80
+dynamics\weapons\wpn_bm16\wpn_bm16 = 400
+dynamics\weapons\wpn_colt1911\wpn_colt1911= 25
+dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle = 28
+dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_silver = 28
+dynamics\weapons\wpn_fiveseven\wpn_fiveseven= 25
+dynamics\weapons\wpn_fn2000\wpn_fn2000 = 45
+dynamics\weapons\wpn_fort\wpn_fort= 40
+dynamics\weapons\wpn_fort\wpn_fort17= 40
+dynamics\weapons\wpn_g36\wpn_g36 = 45
+dynamics\weapons\wpn_gauss\wpn_gauss = 35
+dynamics\weapons\wpn_glock17\wpn_glock17= 25
+dynamics\weapons\wpn_grach\wpn_grach= 20
+dynamics\weapons\wpn_groza\wpn_groza = 50
+dynamics\weapons\wpn_gsh18\wpn_gsh18= 25
+dynamics\weapons\wpn_hpsa\wpn_hpsa= 25
+dynamics\weapons\wpn_knife\wpn_knife = 25
+dynamics\weapons\wpn_l85\wpn_l85 = 45
+dynamics\weapons\wpn_lr300\wpn_lr300 = 45
+dynamics\weapons\wpn_mp5\wpn_mp5 = 105
+dynamics\weapons\wpn_p90\wpn_p90 = 80
+dynamics\weapons\wpn_pkm\wpn_pkm = 98
+dynamics\weapons\wpn_pm\wpn_pm= 35
+dynamics\weapons\wpn_pm\wpn_pb= 35
+dynamics\weapons\wpn_pm\wpn_pmm= 35
+dynamics\weapons\wpn_protecta\wpn_protecta = 80
+dynamics\weapons\wpn_rg6\wpn_rg6 = 110
+dynamics\weapons\wpn_rpg7\wpn_rpg7 = 110
+dynamics\weapons\wpn_saiga12\wpn_saiga12 = 80
+dynamics\weapons\wpn_sig220\wpn_sig220= 25
+dynamics\weapons\wpn_sig220\wpn_sig220r= 25
+dynamics\weapons\wpn_sig550\wpn_sig550 = 50
+dynamics\weapons\wpn_sig550\wpn_sig550_tactical = 50
+dynamics\weapons\wpn_sig550\wpn_sig552 = 98
+dynamics\weapons\wpn_spas12\wpn_spas12 = 80
+dynamics\weapons\wpn_sr1m\wpn_sr1m= 60
+dynamics\weapons\wpn_stechkin\wpn_apb= 25
+dynamics\weapons\wpn_stechkin\wpn_stechkin= 25
+dynamics\weapons\wpn_svd\wpn_svd = 73
+dynamics\weapons\wpn_svu\wpn_svu = 35
+dynamics\weapons\wpn_toz34\wpn_toz34 = 400
+dynamics\weapons\wpn_tt33\wpn_tt33= 25
+dynamics\weapons\wpn_ump45\wpn_ump45 = 115
+dynamics\weapons\wpn_usp45\wpn_usp45= 25
+dynamics\weapons\wpn_usp45\wpn_usp_match= 35
+dynamics\weapons\wpn_val\wpn_val = 80
+dynamics\weapons\wpn_vintorez\wpn_vintorez = 60
+dynamics\weapons\wpn_walter99\wpn_walter99= 35
+dynamics\weapons\wpn_winchester1300\wpn_winchester1300 = 80

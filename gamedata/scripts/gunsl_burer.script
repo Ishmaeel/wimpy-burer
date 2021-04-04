@@ -1,0 +1,42 @@
+function print_to_log(str)
+	get_console():execute("load gunsl_burer_"..str)
+end
+
+local cam_anim_active = false
+local anm_id = 2021
+
+function CamAnimCb()
+	cam_anim_active = false
+end
+
+function HitAnim(need_bloodscreen)
+	if not cam_anim_active then
+		level.add_cam_effector("camera_effects\\burer_gravi_attack_aim.anm", anm_id, false, "gunsl_burer.CamAnimCb")
+		cam_anim_active = true
+	end
+	
+	if (need_bloodscreen) then 
+		gunsl_bloodscreen.ForceHitScreen()
+	end
+end
+
+function on_gravi_attack_when_burer_see_actor(junk, junk)
+	HitAnim(true)
+end
+
+function on_gravi_attack_unconditional(junk, junk)
+	HitAnim(true)
+end
+
+function on_close_antiknife_prepare(junk, junk)
+	HitAnim(false)
+end
+
+function on_close_antiknife(junk, junk)
+	-- вызывается не после каждого on_close_antiknife_prepare, а только в случае успешного отнятия ножа 
+	HitAnim(true)
+end
+
+function on_risky_under_aim(junk, junk)
+	HitAnim(true)
+end
