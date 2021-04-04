@@ -217,20 +217,20 @@ weight_to_stamina_hit			=	0.27 ;0.25 ;kg to stamina %
 ; Gravi Ability
 ;-------------------------------------------------------------------------
 Gravi_Cooldown				= 5000  ; milisec
-Gravi_MinDist				= 1     ; meter
-Gravi_MaxDist				= 15    ; meter
-Gravi_Speed					= 76	; meter/sec
-Gravi_Step					= 2		; meter
+Gravi_MinDist				= 4     ; meter
+Gravi_MaxDist				= 25    ; meter
+Gravi_Speed					= 25	; meter/sec
+Gravi_Step					= 0.8   ; meter
 Gravi_Time_To_Hold			= 1200	; milisec
 Gravi_Radius				= 3.0
 Gravi_Impulse_To_Objects	= 60.0
 Gravi_Impulse_To_Enemy		= 1000.0
-Gravi_Hit_Power				= 1.0
+Gravi_Hit_Power				= 0.8
 
 ;-------------------------------------------------------------------------
 ; Tele Ability
 ;-------------------------------------------------------------------------
-Tele_Max_Handled_Objects = 4;
+Tele_Max_Handled_Objects = 1;
 Tele_Max_Time			 = 7000;  // (s) max time to be in telekinesis
 Tele_Time_To_Hold		 = 400
 Tele_Object_Min_Mass	 = 70
@@ -329,7 +329,7 @@ vision_danger_section		= burer_vision_danger
 
 [burer_protections]
 skin_armor = 0.65
-hit_fraction_monster = 0.2
+hit_fraction_monster = 0.25
 
 [burer_immunities]
 burn_immunity			= 1.0
@@ -374,7 +374,7 @@ transparency_threshold		= 0.25
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left hand Strike
-stand_attack_0			 =	  	0.4,		  0.70,	     100,        2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
+stand_attack_0			 =	  	0.4,		  1.0,	     100,        2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 stand_stamina_attack_0 	 =	  	0.4,		  0.0,	     0,          2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 
 ;=================================================================================
