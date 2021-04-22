@@ -14,7 +14,7 @@ Wimpy Burer addon for Call of Pripyat **Gunslinger** mod. Not compatible with va
   - Extended gravi attack range to compensate. (It's too easy to dodge at long range, tho.)
 
 * Burer does not actualy have a shitload of health, but its damage resistance was very high.
-  - Nerfed burer damage resistant very slightly. Two barrels of buckshot in the face should be enough to kill one. One barrel should not.
+  - Nerfed burer damage resistance very slightly. Two barrels of buckshot in the face should be enough to kill one. One barrel should not.
   
 * Telekinesis attack is an aimbot / one-shot kill in most cases even behind cover. I failed to lower the speed or damage of thrown objects.
   - Settled with deeply nerfing the manipulated object count from 4 to 1. This should give a stalker some non-zero chance of survival.
@@ -34,6 +34,9 @@ Wimpy Burer addon for Call of Pripyat **Gunslinger** mod. Not compatible with va
   
 * He also played mind games, shaking the view and splashing blood on screen when he wasn't even dealing damage, so,
   - Disabled some of his cosmetic viewport animations which didn't make sense.
+
+* Three burers in the Laboratory X-8 were practically invincible as long as the player was outside their room. 
+  - Removed the specific scripting that heals them on hit.
 
 # Final Notes
 I wasn't able to do most of the things I wanted to do with the burer, because either the engine ignores some values in the config files,
