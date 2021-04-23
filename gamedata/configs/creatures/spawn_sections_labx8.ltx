@@ -15,19 +15,28 @@ $spawn                     = "respawn\lx8_poltergeist"
 $spawn                     = "respawn\lx8_burer"
 feel_enemy_who_made_sound_max_distance = 5
 feel_enemy_max_distance = 2
+Tele_Object_Min_Mass	= 10000
 
 [lx8_burer_2]:m_burer_e
 $spawn                     = "respawn\lx8_burer_2"
 feel_enemy_who_made_sound_max_distance = 5
 feel_enemy_max_distance = 2
+Tele_Object_Min_Mass	= 70
+Tele_Object_Max_Mass	= 90
+Tele_Max_Handled_Objects = 4;
 
 [lx8_burer_3]:m_burer_e
 $spawn                     = "respawn\lx8_burer_3"
 feel_enemy_who_made_sound_max_distance = 5
 feel_enemy_max_distance = 2
+protections_sect = wimpy_burer_protections
 
 [lx8_toilet_burer]:m_burer_e
 $spawn                     = "respawn\lx8_toilet_burer"
+
+[wimpy_burer_protections]
+hit_fraction_monster = 0.5
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;tushkanos
 [lx8_1_tushkano_1]:tushkano_normal
 $spawn                     = "respawn\lx8_1_tushkano_1"

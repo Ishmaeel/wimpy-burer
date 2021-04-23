@@ -38,6 +38,11 @@ Wimpy Burer addon for Call of Pripyat **Gunslinger** mod. Not compatible with va
 * Three burers in the Laboratory X-8 were practically invincible as long as the player was outside their room. 
   - Removed the specific scripting that heals them on hit.
 
+* Three burers in the same area means multiple flying objects triangulating your exact coordinates for instakill fun.
+  - Took away telekinesis ability from one of the Lab X-8 burers. He was dropped on his head as a baby.
+  - Another X-8 burer can now only handle smaller objects. He has been neglecting his mental gymnastics.
+  - The remaining X-8 burer now has significantly softer skin and lower armor. No reason, just out of spite.
+
 # Final Notes
 I wasn't able to do most of the things I wanted to do with the burer, because either the engine ignores some values in the config files,
 or I'm wildly misinterpreting what they are for. In any case, I wasn't able to modify his shield behavior or his telekinesis attack the way
