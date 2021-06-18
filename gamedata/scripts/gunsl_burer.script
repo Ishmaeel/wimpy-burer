@@ -33,10 +33,20 @@ function on_close_antiknife_prepare(junk, junk)
 end
 
 function on_close_antiknife(junk, junk)
-	-- вызывается не после каждого on_close_antiknife_prepare, а только в случае успешного отнятия ножа 
+	-- called not after every on_close_antiknife_prepare, but only if the knife is successfully removed
 	HitAnim(true)
 end
 
-function on_risky_under_aim(junk, junk)
-	--HitAnim(true) -- Hit animation is not needed here at all.
+function on_risky_under_aim(junk, burer_id)
+	if not cam_anim_active then
+        --HitAnim(true) -- Hit animation is not needed here at all.
+		--let's take risks
+		return true
+	else
+		return false
+	end
+end
+
+function gunsl_burer.need_disable_shield(junk, burer_id)
+	return cam_anim_active
 end
