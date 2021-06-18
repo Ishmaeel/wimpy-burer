@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ui_gunsl_strelok_secret">
+		<text>Stash from the unlocked module</text>
+	</string>
+	<string id="ui_gunsl_tech_needs_additional_materials">
+		<text>Technician lacks certain radio-technical materials for this upgrade. They might be inside the cement factory. You have to find them and bring them to the technician.</text>
+	</string>
+	<string id="ui_gunsl_mod_corrupted">
+		<text>Mod files are damaged, the game cannot be loaded! \ nWe recommend that you run CheckUpdates.exe to automatically fix problems or reinstall the mod.</text>
+	</string>
+	<string id="ui_gunsl_move_corpse">
+		<text>Drag corpse (SHIFT+$$ACTION_USE$$)</text>
+	</string>
+	<string id="ui_gunsl_move_object">
+		<text>Move object (SHIFT+$$ACTION_USE$$)</text>
+	</string>
+	<string id="gunsl_achievement_stealthy_stalker_name">
+		<text>The master of Disguise</text>
+	</string>
+	<string id="gunsl_achievement_stealthy_stalker_descr">
+		<text>As an experienced stalker, you know very well that today's ally may be tomorrow's enemy - and vice versa. When completing tasks, you try not to attract undue attention to yourself and, if possible, look for bloodless ways to achieve your goals.</text>
+	</string>
+	<string id="gunsl_achievement_stealthy_stalker_hint">
+		<text>You can now purchase a silencer for almost any weapon found in the Zone from Owl.</text>
+	</string>
+	<string id="gunsl_achievement_stealthy_stalker_reached">
+		<text>Get the achievement "Master of Disguise"</text>
+	</string>
+</string_table>
