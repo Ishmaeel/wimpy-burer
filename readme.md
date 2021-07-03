@@ -2,7 +2,8 @@
 Wimpy Burer addon for Call of Pripyat **Gunslinger** mod. Not compatible with vanilla or any other mods.
 
 # Installation
-* Just copy the gamedata, Rico. You know what to do.
+* Make a `gamedata` folder under Gunslinger installation directory and copy the files. (Do not use gamedata under Call of Pripyat directory)
+* Should [look like this](https://raw.githubusercontent.com/Ishmaeel/wimpy-burer/master/gamedata.png)
 * If you get a conflict with `gunsl_overrides.xml`, keep your own version, this one just contains a minor bonus for the attentive. It's not important.
 * If you get conflicts with any other files, you're going to have to merge the changes.
 
