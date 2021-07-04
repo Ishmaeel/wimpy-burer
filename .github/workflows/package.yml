@@ -28,7 +28,7 @@ jobs:
         run: echo "::set-output name=today::$(date +'%Y.%m.%d')"
 
       - name: Zip folder
-        run: zip -r ToggleScope.$RELEASE_NAME.zip gamedata gamedata.png readme.md 
+        run: zip -r WimpyBurer.$RELEASE_NAME.zip gamedata gamedata.png readme.md 
         env: 
           RELEASE_NAME: ${{steps.date.outputs.today}}
       
