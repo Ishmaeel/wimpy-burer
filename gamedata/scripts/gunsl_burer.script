@@ -73,7 +73,7 @@ end
 
 function on_risky_under_aim(junk, burer_id)
 	if not cam_anim_active then
-		HitAnim(ANIM_TYPE_RISKY_ANIMATOR, false)
+		--HitAnim(ANIM_TYPE_RISKY_ANIMATOR, false) -- Hit animation is not needed here at all.
 		--разрешаем рисковать
 		return true
 	else
