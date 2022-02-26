@@ -127,7 +127,7 @@ psy_health_v			= 0.1						;скорость восстановлени€ psy-здоровь€
 ;  оэффициенты размера ран дл€ каждого типа урона; чем больше рана - тем больше урон от нее и дольше врем€ заживлени€
 wound_factor_for_hit_type_0		= 200.0 ; burn
 wound_factor_for_hit_type_5		= 2.0 ; wound
-wound_factor_for_hit_type_6		= 1.0 ; fire_wound
+wound_factor_for_hit_type_6		= 0.5 ; fire_wound
 
 ;  оэффициенты урона, наносимого ранами разных типов
 bleeding_factor_for_hit_type_0 = 0.1
@@ -136,7 +136,7 @@ bleeding_factor_for_hit_type_6 = 0.8
 
 ;открытые раны
 bleeding_v						= 0.004						;потер€ крови при номинальной ране в секунду
-wound_incarnation_v				= 0.002				;крутизна кривой заживлени€ (какой процент раны останетс€ после заживлени€ в игровую секунду)
+wound_incarnation_v				= 0.0035				;крутизна кривой заживлени€ (какой процент раны останетс€ после заживлени€ в игровую секунду)
 min_wound_size					= 0.01
 
 sleep_health					= 1.0		;1.5				;коэффициенты скоростей изменени€ параметров во врем€ сна
@@ -217,8 +217,8 @@ Particle_Shield					= 	anomaly2\burer_shield_01
 anti_aim_timeout				=	3 ;1.5 ; sec
 anti_aim_effectors				=	effector_antiaim
 anti_aim_animation				=	stand_stamina_attack_
-anti_aim_max_angle				=	0.5
-anti_aim_detection_gain_speed	=	10		; 2
+anti_aim_max_angle				=	3.14
+anti_aim_detection_gain_speed	=	15		; 2
 anti_aim_detection_loose_speed	=	0.1
 weapon_drop_velocity			=	8
 weapon_drop_stamina_k			=	0.7   ;IF player stamina < stamina_hit*inv_weight(weapon param)*weapon_drop_stamina_k THEN weapon is dropped
@@ -228,30 +228,30 @@ weight_to_stamina_hit			=	0.27 ;0.25 ;kg to stamina %
 ; Gravi Ability
 ;-------------------------------------------------------------------------
 Gravi_Cooldown				= 5000  ; milisec
-Gravi_MinDist				= 4     ; meter
-Gravi_MaxDist				= 25    ; meter
-Gravi_Speed					= 25	; meter/sec
-Gravi_Step					= 0.8   ; meter
+Gravi_MinDist				= 1     ; meter
+Gravi_MaxDist				= 30    ; meter
+Gravi_Speed					= 76	; meter/sec
+Gravi_Step					= 2		; meter
 Gravi_Time_To_Hold			= 1200	; milisec
 Gravi_Radius				= 3.0
 Gravi_Impulse_To_Objects	= 60.0
-Gravi_Impulse_To_Enemy		= 1000.0
-Gravi_Hit_Power				= 0.8
+Gravi_Impulse_To_Enemy		= 10000.0
+Gravi_Hit_Power				= 1.0
 
 ;-------------------------------------------------------------------------
 ; Tele Ability
 ;-------------------------------------------------------------------------
-Tele_Max_Handled_Objects = 1;
+Tele_Max_Handled_Objects = 6;
 Tele_Max_Time			 = 7000;  // (s) max time to be in telekinesis
 Tele_Time_To_Hold		 = 400
 Tele_Object_Min_Mass	 = 70
 Tele_Object_Max_Mass	 = 1000.0
 Tele_Find_Radius		 = 12.0
-Tele_Min_Distance		 = 5
-Tele_Max_Distance		 = 50
-Tele_Raise_Speed		 = 6
-Tele_Fly_Velocity		 = 70 ;50
-Tele_Object_Height		 = 3.7  ;2
+tele_min_distance		 = 1
+tele_max_distance		 = 50
+tele_raise_speed		 = 6
+tele_fly_velocity		 = 30
+tele_object_height		 = 3.7  ;2
 
 sound_tele_hold			= monsters\burer\burer_tele_hold
 sound_tele_throw		= monsters\burer\burer_tele_throw
@@ -340,10 +340,10 @@ vision_danger_section		= burer_vision_danger
 
 [burer_protections]
 skin_armor = 0.65
-hit_fraction_monster = 0.25
+hit_fraction_monster = 0.2
 
 [burer_immunities]
-burn_immunity			= 1.0
+burn_immunity			= 0.3
 strike_immunity			= 1.0
 shock_immunity			= 1.0
 wound_immunity			= 0.02
@@ -385,7 +385,7 @@ transparency_threshold		= 0.25
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left hand Strike
-stand_attack_0			 =	  	0.4,		  1.0,	     100,        2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
+stand_attack_0			 =	  	0.4,		  0.70,	     100,        2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 stand_stamina_attack_0 	 =	  	0.4,		  0.0,	     0,          2.0, 1.0, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 
 ;=================================================================================

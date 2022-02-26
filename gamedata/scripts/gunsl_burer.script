@@ -9,10 +9,32 @@ function CamAnimCb()
 	cam_anim_active = false
 end
 
-function HitAnim(need_bloodscreen)
+
+local ANIM_TYPE_ORDINAL = 0
+local ANIM_TYPE_DROP_ANIMATOR = 1
+local ANIM_TYPE_RISKY_ANIMATOR = 2
+local ANIM_TYPE_STAMINAHIT_ANIMATOR = 3
+
+
+local last_cam_anim_type = ANIM_TYPE_ORDINAL
+function HitAnim(anim_type, need_bloodscreen)
 	if not cam_anim_active then
-		level.add_cam_effector("camera_effects\\burer_gravi_attack_aim.anm", anm_id, false, "gunsl_burer.CamAnimCb")
 		cam_anim_active = true
+		last_cam_anim_type = anim_type
+		
+		if anim_type == ANIM_TYPE_ORDINAL then 
+			level.add_cam_effector("camera_effects\\burer_gravi_attack_aim.anm", anm_id, false, "gunsl_burer.CamAnimCb")
+		elseif anim_type == ANIM_TYPE_DROP_ANIMATOR then
+			level.add_cam_effector("camera_effects\\burer_snatch_the_weapon.anm", anm_id, false, "gunsl_burer.CamAnimCb")
+		elseif anim_type == ANIM_TYPE_RISKY_ANIMATOR then
+			level.add_cam_effector("camera_effects\\burer_gravi_attack_aim.anm", anm_id, false, "gunsl_burer.CamAnimCb")
+			cam_anim_active = false --даём возможность запустить анимацию камеры вырывания
+		elseif anim_type == ANIM_TYPE_STAMINAHIT_ANIMATOR then
+			level.add_cam_effector("camera_effects\\burer_antiaim_attack.anm", anm_id, false, "gunsl_burer.CamAnimCb")			
+		else
+			cam_anim_active = false
+		end
+		
 	end
 	
 	if (need_bloodscreen) then 
@@ -21,32 +43,68 @@ function HitAnim(need_bloodscreen)
 end
 
 function on_gravi_attack_when_burer_see_actor(junk, junk)
-	HitAnim(false) -- No need for blood yet. The actor can still dodge the gravi attack.
 end
 
 function on_gravi_attack_unconditional(junk, junk)
-	HitAnim(false) -- No need for blood yet. The actor can still dodge the gravi attack.
+end
+
+function on_gravi_attack_actor_hit(hunk, junk)
+	HitAnim(ANIM_TYPE_ORDINAL, true)
 end
 
 function on_close_antiknife_prepare(junk, junk)
-	HitAnim(false)
+	HitAnim(ANIM_TYPE_ORDINAL, false)
 end
 
 function on_close_antiknife(junk, junk)
-	-- called not after every on_close_antiknife_prepare, but only if the knife is successfully removed
-	HitAnim(true)
+	-- вызывается не после каждого on_close_antiknife_prepare, а только в случае успешного отнятия ножа 
+	HitAnim(ANIM_TYPE_ORDINAL, true)
+end
+
+function on_drop_animator(junk, burer_id)
+	-- Вызывается перед началом проигрывания аниматора вырывания оружия из рук
+	HitAnim(ANIM_TYPE_DROP_ANIMATOR, false)
+end
+
+function on_stamina_hit_nodrop(junk, burer_id)
+	-- Вызывается в момент хита по стамине, не приводящего к выбиванию оружия
+	HitAnim(ANIM_TYPE_STAMINAHIT_ANIMATOR, false)
 end
 
 function on_risky_under_aim(junk, burer_id)
 	if not cam_anim_active then
-        --HitAnim(true) -- Hit animation is not needed here at all.
-		--let's take risks
+		HitAnim(ANIM_TYPE_RISKY_ANIMATOR, false)
+		--разрешаем рисковать
 		return true
 	else
 		return false
 	end
 end
 
-function gunsl_burer.need_disable_shield(junk, burer_id)
+function need_disable_shield(junk, burer_id)
 	return cam_anim_active
+end
+
+function can_tele_object(junk, objectid, junk)
+	local result = true
+	local WEAPON_MAX_TELE_DIST = 10
+	
+	local o = level.object_by_id(objectid)
+	if (db.actor~=nil) and (o ~= nil) then
+		local distance = o:position():distance_to(db.actor:position()) 
+	
+		if (string.sub(o:section(), 1, 4) == "wpn_") and (distance > WEAPON_MAX_TELE_DIST) then
+			result = false
+		elseif treasure_manager.get_treasure_manager():is_secret_item(objectid) then
+			result = false
+		end
+	end
+	
+	return result
+end
+
+function can_start_antiaim(junk, burer_id)
+	local bad_anim = cam_anim_active and (last_cam_anim_type~=ANIM_TYPE_RISKY_ANIMATOR)
+	
+	return not bad_anim
 end

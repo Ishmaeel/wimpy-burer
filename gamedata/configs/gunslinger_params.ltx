@@ -137,6 +137,7 @@ headlamp_disable_animator = headlamp_disable_animator
 
 nv_enable_animator = nv_enable_animator
 nv_disable_animator = nv_disable_animator
+burn_animator = burn_animator
 
 kick_animator = quick_kick_animator
 
@@ -188,9 +189,9 @@ light_palevo_dist = 10
 light_see_dist = 60
 
 burer_superstaminahit_dist = 10
-burer_superstaminahit_value = 0.8
+burer_superstaminahit_value = 1000
 burer_superstaminahit_minimal_stamina = 0.01
-burer_superstaminahit_minimal_stamina_health = 0.9
+burer_superstaminahit_minimal_stamina_health = 0.9;
 burer_superhealthhit_power = 0.4
 burer_superhealthhit_impulse = 14
 burer_superhealthhit_type = 5
@@ -210,10 +211,24 @@ burer_teleweapon_bone_1 = bip01_spine
 
 burer_forceantiaim_dist = 10
 burer_forceshield_dist = 3
-burer_shielded_risky_factor = 0.05 ;склонность неожиданно снимать щит для контратаки 
+burer_shielded_risky_factor = 0.038 ;склонность неожиданно снимать щит для контратаки 
 burer_min_gren_timer = 1500 ;если до взрыва гранаты осталось меньше времени - уходим в защиту
+burer_critical_gren_timer = 1200 ; если до взрыва грены осталось меньше вренеми - экстренно прекращаем телекинез
 burer_antigrenade_throw_force = 10;
-burer_forcetelefire_min_delta = 400;
+burer_forcetelefire_min_delta = 3000;
+burer_gravi_impulse_for_actor = 1000
+burer_skip_fireall_probability = 0.7
+
+burer_fly_params_enabled = false
+burer_fly_params_max_dist = 5
+burer_fly_params_critical_dist = 2
+burer_fly_params_preferred_dist = 8
+burer_fly_params_preferred_height = 9
+burer_fly_params_impulse = 300
+burer_fly_params_cooldown_period = 1000
+burer_fly_params_visibility_period = 500
+burer_fly_params_max_time = 100
+burer_fly_params_vertical_accel = 0.6
 
 weapon_physics_damage_treshold = 9
 weapon_physics_damage_speed = 0.005
@@ -225,6 +240,8 @@ boar_hit_conditiondecmin = 0.05
 boar_hit_conditiondecmin = 0.25
 
 actor_fall_hit_koef = 2.5
+
+actor_burn_restore_speed = 0.000002
 
 [gunslinger_wound_factors]
 wound_factor_for_hit_type_0 = 1.0 ;burn
@@ -266,6 +283,7 @@ dynamics\weapons\wpn_pm\wpn_pb= 35
 dynamics\weapons\wpn_pm\wpn_pmm= 35
 dynamics\weapons\wpn_protecta\wpn_protecta = 80
 dynamics\weapons\wpn_rg6\wpn_rg6 = 110
+dynamics\weapons\wpn_rgm40\wpn_rgm40 = 30
 dynamics\weapons\wpn_rpg7\wpn_rpg7 = 110
 dynamics\weapons\wpn_saiga12\wpn_saiga12 = 80
 dynamics\weapons\wpn_sig220\wpn_sig220= 25
