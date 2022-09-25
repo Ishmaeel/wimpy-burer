@@ -143,6 +143,8 @@ kick_animator = quick_kick_animator
 
 pda_show_animator = pda_show_animator
 
+;inventory_show_animator = inventory_show_animator
+
 quickuse_functor = gwr_eatable.on_quickuse_suspected
 nv_mask_update_functor = gunsl_nv_screen_mask.update
 
@@ -191,7 +193,7 @@ light_see_dist = 60
 burer_superstaminahit_dist = 10
 burer_superstaminahit_value = 0.8
 burer_superstaminahit_minimal_stamina = 0.01
-burer_superstaminahit_minimal_stamina_health = 0.9
+burer_superstaminahit_minimal_stamina_health = 0.9;
 burer_superhealthhit_power = 0.4
 burer_superhealthhit_impulse = 14
 burer_superhealthhit_type = 5
@@ -218,6 +220,10 @@ burer_antigrenade_throw_force = 10;
 burer_forcetelefire_min_delta = 400;
 burer_gravi_impulse_for_actor = 1000
 burer_skip_fireall_probability = 0.7
+burer_aim_shield_delay_const = 1500
+burer_aim_shield_delay_random = 2000
+
+burer_knife_selfkick_window_time = 0 ;500
 
 burer_fly_params_enabled = false
 burer_fly_params_max_dist = 5
@@ -242,6 +248,11 @@ boar_hit_conditiondecmin = 0.25
 actor_fall_hit_koef = 2.5
 
 actor_burn_restore_speed = 0.000002
+
+enable_shaders_cache = true
+
+[gunslinger_fixed_commands]
+
 
 [gunslinger_wound_factors]
 wound_factor_for_hit_type_0 = 1.0 ;burn
