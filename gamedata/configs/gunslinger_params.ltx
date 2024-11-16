@@ -111,11 +111,11 @@ controller_psi_unblock_mindist_prob = 0.75
 controller_psi_unblock_maxdist_prob = 0.05
 
 ;Влияние контролера на движения мыши
-controller_mouse_sense_min = 0.1
-controller_mouse_sense_max = 0.5
-controller_mouse_offset_min = -6
-controller_mouse_offset_max = 6
-controller_mouse_keyboard_move_k = 3.0
+controller_mouse_sense_min = 0.4
+controller_mouse_sense_max = 0.7
+controller_mouse_offset_min = -3
+controller_mouse_offset_max = 3
+controller_mouse_keyboard_move_k = 0.1
 
 ;Ближе этой дистанции контролер не будет пытаться подорвать актора из подствола
 controller_shoot_gl_min_dist = 5
@@ -242,14 +242,49 @@ weapon_physics_damage_speed = 0.005
 upgrade_menu_points_offset_x_16x9 = 50
 upgrade_menu_points_offset_x = 0
 
+
+boar_hit_mouse_x_min = 10
+boar_hit_mouse_x_max = 20
+boar_hit_mouse_y_min = 10
+boar_hit_mouse_y_max = 20
 boar_hit_conditiondecmin = 0.05
-boar_hit_conditiondecmin = 0.25
+boar_hit_conditiondecmax = 0.25
+boar_stamina_hit_k = 1.2
+boar_hit_unconditional_weapon_drop_dist = -1
+
+pseudogiant_hit_mouse_x_min = 30
+pseudogiant_hit_mouse_x_max = 40
+pseudogiant_hit_mouse_y_min = 10
+pseudogiant_hit_mouse_y_max = 20
+pseudogiant_hit_conditiondecmin = 0.1
+pseudogiant_hit_conditiondecmax = 0.3
+pseudogiant_stamina_hit_k = 0.8
+pseudogiant_hit_unconditional_weapon_drop_dist = 1.7
+
+pseudogiant_threaten_mouse_x_min = 20
+pseudogiant_threaten_mouse_x_max = 30
+pseudogiant_threaten_mouse_y_min = -5
+pseudogiant_threaten_mouse_y_max = 15
+pseudogiant_threaten_conditiondecmin = 0.04
+pseudogiant_threaten_conditiondecmax = 0.15
+pseudogiant_threaten_stamina_hit_k = 1.3
+pseudogiant_threaten_unconditional_weapon_drop_dist = 15
+pseudogiant_threaten_low_delay_height_delta = 2
+pseudogiant_threaten_low_delay_distance = 2
+pseudogiant_threaten_low_delay_time = 1500
+pseudogiant_threaten_std_to_low_delay_time = 2000
 
 actor_fall_hit_koef = 2.5
 
 actor_burn_restore_speed = 0.000002
 
 enable_shaders_cache = true
+
+weather_script = level_weathers_default
+
+;материалы, способные тушить (через запятую)
+burn_restore_materials = materials\water
+burn_restore_material_speed= 0.00001
 
 [gunslinger_fixed_commands]
 
